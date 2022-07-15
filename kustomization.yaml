@@ -1,3 +1,4 @@
 resources:
 - alpine.yaml
 - ubuntu.yaml
+- windows.yaml

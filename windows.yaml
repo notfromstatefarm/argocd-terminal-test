@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: windows-deployment
+  labels:
+    app: windows
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: windows
+  template:
+    metadata:
+      labels:
+        app: windows
+    spec:
+      nodeSelector:
+        beta.kubernetes.io/os: windows
+      containers:
+      - name: windows
+        image: mcr.microsoft.com/windows/nanoserver:2022
